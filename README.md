@@ -60,6 +60,14 @@ RUNTEQ37期には「討伐会」という文化があります。
 - 利用規約
 - プライバシーポリシー
 
+## 画面遷移図
+
+https://www.figma.com/file/Fr37ooxPsRTB6KfAariKWQ/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?t=6G2oS57a9mIfZ5ZW-1
+
+## ER図
+
+<img width="238" alt="名称未設定" src="https://user-images.githubusercontent.com/113349377/226089989-3955a5fb-c17f-4122-af33-99449f44da95.png">
+
 ## スケジュール
 
 企画〜技術調査：3/10〆切
