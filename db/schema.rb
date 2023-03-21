@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_21_095300) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_21_100827) do
   create_table "quests", charset: "utf8mb4", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.datetime "date_time"
-    t.string "place"
-    t.text "body"
-    t.integer "step"
+    t.string "place", null: false
+    t.text "body", null: false
+    t.integer "step", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
