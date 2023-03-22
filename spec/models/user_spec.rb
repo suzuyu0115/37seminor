@@ -11,13 +11,13 @@ RSpec.describe User, type: :model do
     it "nameがない場合" do
       user = build(:user, name: "")
       expect(user).to be_invalid
-      # expect(user.errors[:name]).to eq ["can't be blank"]
+      expect(user.errors[:name]).to eq ["を入力してください"]
     end
 
     it "emailがない場合" do
       user = build(:user, email: "")
       expect(user).to be_invalid
-      # expect(user.errors[:email]).to eq ["can't be blank"]
+      expect(user.errors[:email]).to eq ["を入力してください"]
     end
   end
 end
