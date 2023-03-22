@@ -4,7 +4,7 @@
 			<% if @quests.present? %>
 				<%= render @quests %>
 			<% else %>
-				<p>クエストはありません</p>
+				<p><%= t('.no_result') %></p>
 			<% end %>
     </div>
   </div>
