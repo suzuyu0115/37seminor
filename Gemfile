@@ -45,6 +45,8 @@ gem 'rails-i18n'
 
 gem 'foreman'
 
+gem 'enum_help'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
