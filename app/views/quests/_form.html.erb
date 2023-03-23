@@ -1,0 +1,39 @@
+<%= form_with(model: quest, class: "contents") do |form| %>
+  <% if quest.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(quest.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% quest.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+  <div class="my-5">
+    <%= form.label :step %>
+    <br>
+    <%= form.select :step, Quest.steps.map{|key, value| [key, Quest.steps[value]]} %>
+  </div>
+  <div class="my-5">
+    <%= form.label :date_time %>
+    <%= form.datetime_field :date_time, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+  <div class="my-5">
+    <%= form.label :place %>
+    <%= form.text_field :place, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+  <div class="my-5">
+    <%= form.label :body %>
+    <%= form.text_area :body, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", rows: 10 %>
+  </div>
+  <br>
+  <div class="inline">
+    <%= form.submit class: "inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg" %>
+  </div>
+<% end %>
