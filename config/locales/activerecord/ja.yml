@@ -8,3 +8,16 @@ ja:
         email:  'メールアドレス'
         password:  'パスワード'
         password_confirmation:  'パスワード確認'
+      quest:
+        title: '課題名'
+        step: 'カリキュラム'
+        date_time: '開催日時'
+        place: '開催場所'
+        body: '詳細'
+  enums:
+    quest:
+      step:
+        introduction: '入門STEP'
+        basic: '基礎STEP'
+        advanced: '応用STEP'
+        other: 'その他'

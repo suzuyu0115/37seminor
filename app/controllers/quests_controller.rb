@@ -10,9 +10,9 @@ class QuestsController < ApplicationController
   def create
     @quest = current_user.quests.build(quest_params)
     if @quest.save
-      redirect_to quests_path, success: 'クエストを作成しました'
+      redirect_to quests_path, success: t('defaults.message.created', item: Quest.model_name.human)
     else
-      flash.now['danger'] = 'クエストの作成に失敗しました'
+      flash.now[:danger] = t('defaults.message.not_created', item: Quest.model_name.human)
       render :new
     end
   end
