@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       quest: 'クエスト'
+      user: 'ユーザー'
     attributes:
       user:
         name:  'ニックネーム'
