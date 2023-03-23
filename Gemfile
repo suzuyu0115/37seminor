@@ -78,3 +78,5 @@ group :test do
 end
 
 gem 'sorcery'
+gem 'config'
+gem 'letter_opener_web'
