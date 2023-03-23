@@ -89,12 +89,17 @@ GEM
       reline (>= 0.3.1)
     diff-lcs (1.5.0)
     erubi (1.12.0)
+<<<<<<< HEAD
+    faker (3.1.1)
+      i18n (>= 1.8.11, < 2)
+=======
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
     foreman (0.87.2)
+>>>>>>> main
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.12.0)
@@ -244,8 +249,12 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+<<<<<<< HEAD
+  faker (~> 3.1.1)
+=======
   factory_bot_rails
   foreman
+>>>>>>> main
   importmap-rails
   mysql2 (~> 0.5)
   puma (~> 5.0)

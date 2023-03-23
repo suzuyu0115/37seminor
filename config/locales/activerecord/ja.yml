@@ -1,1 +1,4 @@
 ja:
+  activerecord:
+    models:
+      quest: 'クエスト'
