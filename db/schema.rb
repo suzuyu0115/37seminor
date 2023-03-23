@@ -27,6 +27,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_22_101038) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "crypted_password"
+    t.string "salt"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   add_foreign_key "quests", "users"
