@@ -1,6 +1,9 @@
 10.times do                            # userのダミーデータ
   User.create!(
-    name: Faker::Name.unique.name
+    name: Faker::Name.unique.name,
+    email: Faker::Internet.unique.email,
+    password: "3150test",
+    password_confirmation: "3150test"
   )
 end
 
