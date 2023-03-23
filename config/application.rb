@@ -19,6 +19,13 @@ module App
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
+    config.generators do |g|
+      g.skip_routes true   # ルーティングを生成しない
+      g.assets false       # assetsファイルを生成しない
+      g.helper false       # helperを生成しない
+      g.test_framework false  # testファイルを生成しない
+    end
+
     # デフォルトのlocaleを日本語(:ja)に変更
     config.i18n.default_locale = :ja
     config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.{rb,yml}').to_s]
