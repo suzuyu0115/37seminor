@@ -11,7 +11,7 @@ class PasswordResetsController < ApplicationController
     @user = User.find_by_email(params[:email])
 
     # This line sends an email to the user with instructions on how to reset their password (a url with a random token)
-    @user.deliver_reset_password_instructions!
+    @user&.deliver_reset_password_instructions!
 
     # Tell the user instructions have been sent whether or not email was found.
     # This is to not leak information to attackers about which emails exist in the system.
@@ -21,7 +21,7 @@ class PasswordResetsController < ApplicationController
   # This is the reset password form.
   def edit
     @token = params[:id]
-    @user = User.load_from_reset_password_token(params[:id])
+    @user = User.load_from_reset_password_token(@token)
 
     if @user.blank?
       not_authenticated
@@ -32,7 +32,7 @@ class PasswordResetsController < ApplicationController
   # This action fires when the user has sent the reset password form.
   def update
     @token = params[:id]
-    @user = User.load_from_reset_password_token(params[:id])
+    @user = User.load_from_reset_password_token(@token)
 
     if @user.blank?
       not_authenticated
@@ -43,9 +43,9 @@ class PasswordResetsController < ApplicationController
     @user.password_confirmation = params[:user][:password_confirmation]
     # the next line clears the temporary token and updates the password
     if @user.change_password(params[:user][:password])
-      redirect_to(root_path, :notice => 'Password was successfully updated.')
+      redirect_to root_path, notice: 'Password was successfully updated.'
     else
-      render :action => "edit"
+      render :edit
     end
   end
 end
