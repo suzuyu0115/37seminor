@@ -18,7 +18,7 @@
   <div class="my-5">
     <%= f.label :step %>
     <br>
-    <%= f.select :step, Quest.steps_i18n.invert.keys.map{|key, value| [key, Quest.steps[value]]} %>
+    <%= f.select :step, Quest.steps.keys.map { |k| [I18n.t("enums.quest.step.#{k}"), k]} %>
   </div>
   <div class="my-5">
     <%= f.label :date_time %>
@@ -32,8 +32,5 @@
     <%= f.label :body %>
     <%= f.text_area :body, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", rows: 10 %>
   </div>
-  <br>
-  <div class="inline">
     <%= f.submit t('quests.new.create_quest'), class: "inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg" %>
-  </div>
 <% end %>
