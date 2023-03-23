@@ -12,5 +12,10 @@ ja:
       view_details: 'クエストの詳細を見る'
   users:
     new:
-      title:  'ユーザー登録'
+      title:  'ハンター登録'
       to_login_page: 'ログインページへ'
+  user_sessions:
+    new:
+      title:  'ログイン'
+      to_register_page: 'ハンター登録はこちら'
+      password_forget: 'パスワードをお忘れの方はこちら'
