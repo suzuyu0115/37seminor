@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
     @user = login(params[:email], params[:password])
 
     if @user
-      redirect_back_or_to(:quests, notice: 'Login successful')
+      redirect_back_or_to quests_path, notice: 'Login successful'
     else
       flash.now[:alert] = 'Login failed'
       render :new
