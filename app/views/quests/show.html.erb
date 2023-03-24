@@ -9,7 +9,13 @@
   <br>
   <div class="my-5">
     <h3>開催時間</h3>
-    <p class="block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"><%= l @quest.date_time %></p>
+    <p class="block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full">
+      <% if @quest.date_time.present? %>
+        <%= l @quest.date_time %>
+      <% else %>
+        <%= t('.unknown_date_time') %>
+      <% end %>
+    </p>
   </div>
   <div class="my-5">
     <h3>会場</h3>
