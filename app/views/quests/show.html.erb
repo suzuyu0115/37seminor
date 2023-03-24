@@ -1,14 +1,14 @@
 <div class="mx-auto md:w-2/3 w-full mb-8">
-  <h1 class="font-bold text-4xl">クエスト詳細</h1>
+  <h1 class="font-bold text-4xl"><%= t('.title') %></h1>
   <br>
   <div class="my-5">
-    <h1 class="flex justify-center font-bold text-4xl">課題名</h1>
+    <h1 class="flex justify-center font-bold text-4xl"><%= Quest.human_attribute_name(:title) %></h1>
     <br>
     <h1 class="flex justify-center font-bold text-4xl"><%= @quest.title %></h1>
   </div>
   <br>
   <div class="my-5">
-    <h3>開催時間</h3>
+    <h3><%= Quest.human_attribute_name(:date_time) %></h3>
     <p class="block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full">
       <% if @quest.date_time.present? %>
         <%= l @quest.date_time %>
@@ -18,11 +18,11 @@
     </p>
   </div>
   <div class="my-5">
-    <h3>会場</h3>
+    <h3><%= Quest.human_attribute_name(:place) %></h3>
     <p class="block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"><%= @quest.place %></p>
   </div>
   <div class="my-5">
-    <h3>詳細</h3>
+    <h3><%= Quest.human_attribute_name(:body) %></h3>
     <p class="block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"><%= @quest.body %></p>
   </div>
 </div>

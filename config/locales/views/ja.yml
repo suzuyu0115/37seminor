@@ -17,6 +17,9 @@ ja:
     new:
       title: 'クエスト依頼'
       create_quest: 'クエストを依頼'
+    show:
+      title: 'クエスト詳細'
+      unknown_date_time: '開催日未定'
   users:
     new:
       title:  'ハンター登録'
