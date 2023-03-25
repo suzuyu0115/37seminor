@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :quests, dependent: :destroy
+
   authenticates_with_sorcery!
   mount_uploader :avatar, AvatarUploader #カラム名、アップローダー名
 
