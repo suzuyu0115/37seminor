@@ -1,4 +1,6 @@
 class QuestsController < ApplicationController
+  before_action :set_quest, only: %i[edit update]
+
   def index
     @quests = Quest.all.includes(:user).order(created_at: :desc)
   end
