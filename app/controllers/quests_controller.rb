@@ -21,7 +21,21 @@ class QuestsController < ApplicationController
     @quest = Quest.find(params[:id])
   end
 
+  def edit; end
+
+  def update
+    if @quest.update(quest_params)
+      redirect_to @quest
+    else
+      render :edit
+    end
+  end
+
   private
+
+  def set_quest
+    @quest = current_user.quests.find(params[:id])
+  end
 
   def quest_params
     params.require(:quest).permit(:title, :body, :step, :date_time, :place)
