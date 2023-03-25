@@ -10,4 +10,8 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :name, presence: true
   validates :reset_password_token, uniqueness: true, allow_nil: true
+
+  def own?(object)
+    id == object.user_id
+  end
 end
