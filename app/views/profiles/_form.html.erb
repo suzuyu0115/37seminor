@@ -21,11 +21,32 @@
   </div>
   <div class="my-5">
     <%= form.label :avatar %>
-    <%= form.file_field :avatar, onchange: 'previewImage()', class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", accept: 'image/*' %>
+    <%= form.file_field :avatar, onchange: 'previewImage()', class: "mb-3 block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", accept: 'image/*' %>
     <%= form.hidden_field :avatar_cache %>
+    <%= image_tag user.avatar.url,
+                  class: 'rounded-full',
+                  id: 'preview',
+                  size: '100x100' %>
   </div>
   <br>
   <div class="inline">
     <%= form.submit class: "inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg mb-3" %>
   </div>
 <% end %>
+
+<script>
+function previewImage(event) {
+  const target = this.event.target;
+  const file = target.files[0];
+  const reader = new FileReader();
+  reader.onloadend = function () {
+    const preview = document.querySelector("#preview")
+    if (preview) {
+      preview.src = reader.result;
+    }
+  }
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+}
+</script>
