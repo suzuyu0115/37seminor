@@ -70,5 +70,4 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :letter_opener_web
   config.action_mailer.default_url_options =  { host: 'localhost:3001' }
   config.hosts << "runteqhunter.magia.runteq.jp"
-  config.hosts << "runteqhunter.db.magia.runteq.jp"
 end
