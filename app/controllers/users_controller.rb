@@ -14,6 +14,7 @@ class UsersController < ApplicationController
       auto_login(@user)
       redirect_to quests_path, success: t('.success')
     else
+      flash.now[:danger] = t('.fail')
       render :new, status: :unprocessable_entity
     end
   end

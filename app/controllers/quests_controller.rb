@@ -13,7 +13,7 @@ class QuestsController < ApplicationController
       redirect_to quests_path, success: t('defaults.message.created', item: Quest.model_name.human)
     else
       flash.now[:danger] = t('defaults.message.not_created', item: Quest.model_name.human)
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
