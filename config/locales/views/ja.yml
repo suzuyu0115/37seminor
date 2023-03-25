@@ -40,3 +40,12 @@ ja:
     update:
       success: 'パスワードを変更しました'
       fail: 'パスワードの変更に失敗しました'
+  profiles:
+    show:
+      title: 'プロフィール'
+      edit: '編集'
+      email: 'email: '
+    edit:
+      title: 'プロフィール編集'
+      edit: '編集'
+      show: 'プロフィール画面'

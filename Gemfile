@@ -44,7 +44,7 @@ gem "bootsnap", require: false
 gem 'rails-i18n'
 
 gem 'foreman'
-
+gem 'carrierwave'
 gem 'enum_help'
 
 # Use Sass to process CSS
