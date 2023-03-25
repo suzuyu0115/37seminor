@@ -45,6 +45,8 @@ gem 'rails-i18n'
 
 gem 'foreman'
 
+gem 'carrierwave'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
