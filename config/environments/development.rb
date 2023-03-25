@@ -71,7 +71,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options =  { host: 'localhost:3001' }
 
   #ホストを許可
-  config.hosts << "runteqhunter.magia.runteq.jp"
-  config.hosts << "runteqhunter.db.magia.runteq.jp"
+  config.hosts << ".magia.runteq.jp"
+  config.web_console.allowed_ips = '0.0.0.0/0'
 
 end
