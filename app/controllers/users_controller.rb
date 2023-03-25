@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
     if @user.save
       auto_login(@user)
-      redirect_to quests_path, notice: "User was successfully created."
+      redirect_to quests_path, success: t('.success')
     else
       render :new, status: :unprocessable_entity
     end
