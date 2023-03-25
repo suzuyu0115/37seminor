@@ -7,14 +7,17 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload", defer: true  %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
     <%= render 'shared/header' %>
-    <main class="container mx-auto mt-28 px-5 flex">  
-        <%= yield %>
+    <div class="pt-6">
+      <%= render 'shared/flash_message' %>
+    </div>
+    <main class="container mx-auto mt-28 px-5 flex">
+      <%= yield %>
     </main>
     <%= render 'shared/footer' %>
   </body>

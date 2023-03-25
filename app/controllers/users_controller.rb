@@ -2,22 +2,9 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
   skip_before_action :require_login, only: %i[index new create]
 
-  # GET /users
-  def index
-    @users = User.all
-  end
-
-  # GET /users/1
-  def show
-  end
-
   # GET /users/new
   def new
     @user = User.new
-  end
-
-  # GET /users/1/edit
-  def edit
   end
 
   # POST /users
@@ -26,25 +13,10 @@ class UsersController < ApplicationController
 
     if @user.save
       auto_login(@user)
-      redirect_to quests_path, notice: "User was successfully created."
+      redirect_to quests_path, success: t('.success')
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  # PATCH/PUT /users/1
-  def update
-    if @user.update(user_params)
-      redirect_to @user, notice: "User was successfully updated."
-    else
-      render :edit, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /users/1
-  def destroy
-    @user.destroy
-    redirect_to users_url, notice: "User was successfully destroyed."
   end
 
   private
