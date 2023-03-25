@@ -20,6 +20,8 @@ ja:
     show:
       title: 'クエスト詳細'
       unknown_date_time: '開催日未定'
+    edit:
+      title: 'クエスト編集'
   users:
     new:
       title:  'ハンター登録'

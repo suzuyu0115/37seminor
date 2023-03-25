@@ -6,6 +6,7 @@
     <br>
     <h1 class="flex justify-center font-bold text-4xl"><%= @quest.title %></h1>
   </div>
+  <%= link_to t('quests.edit.title'), edit_quest_path(@quest), class: "inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg" %>
   <br>
   <div class="my-5">
     <h3><%= Quest.human_attribute_name(:date_time) %></h3>
