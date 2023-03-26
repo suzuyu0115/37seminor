@@ -1,5 +1,6 @@
 <%= form_with model: quest, local: true do |f| %>
-
+  <%= render 'shared/error_messages', object: f.object %>
+ 
   <div class="my-5">
     <%= f.label :title %>
     <%= f.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
