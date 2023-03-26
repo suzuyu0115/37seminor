@@ -1,4 +1,6 @@
 class QuestsController < ApplicationController
+  before_action :set_quest, only: %i[edit update]
+
   def index
     @quests = Quest.all.includes(:user).order(created_at: :desc)
   end
@@ -21,7 +23,21 @@ class QuestsController < ApplicationController
     @quest = Quest.find(params[:id])
   end
 
+  def edit; end
+
+  def update
+    if @quest.update(quest_params)
+      redirect_to @quest
+    else
+      render :edit
+    end
+  end
+
   private
+
+  def set_quest
+    @quest = current_user.quests.find(params[:id])
+  end
 
   def quest_params
     params.require(:quest).permit(:title, :body, :step, :date_time, :place)

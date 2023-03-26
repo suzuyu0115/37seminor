@@ -10,5 +10,6 @@
           </h2>
           <p class="leading-relaxed mb-3"><%= t('quests.index.place') %><%= quest.place %></p>
           <a><%= link_to t('quests.index.view_details'), quest_path(quest), class: 'text-green-500 inline-flex items-center' %></a>
+          <%= render 'edit_button', quest: quest if current_user.own?(quest) %>
         </div>
       </div>
