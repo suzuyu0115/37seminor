@@ -7,6 +7,7 @@ class QuestsController < ApplicationController
 
   def new
     @quest = Quest.new
+    render layout: "quest_layout"
   end
 
   def create

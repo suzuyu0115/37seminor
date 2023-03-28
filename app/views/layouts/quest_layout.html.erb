@@ -18,7 +18,7 @@
       <%= render 'shared/before_login_header' %>
     <% end %>
     <%= render 'shared/flash_message' %>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <main class="mt-16 flex w-full bg-opacity-75" style="background-image: url('<%= asset_path('bgimg1.jpeg') %>'); background-repeat: no-repeat; background-position: center; background-size: cover;">
         <%= yield %>
     </main>
     <%= render 'shared/footer' %>
