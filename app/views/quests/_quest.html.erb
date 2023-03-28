@@ -1,15 +1,15 @@
-      <div class="p-4">
+      <div class="p-4 drop-shadow-2xl">
         <div class="h-full bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative" style="background-image: url('<%= asset_path('quest.png') %>'); background-repeat: no-repeat; background-position: center; background-size: contain;">
-            <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mt-4 mb-3"><%= quest.title %></h1>
-            <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+            <h1 class="title-font sm:text-2xl text-base font-medium text-current mt-4 mb-3 drop-shadow-lg"><%= quest.title %></h1>
+            <h2 class="tracking-widest text-sm title-font font-medium text-slate-500 mb-1">
               <% if quest.date_time.present? %>
                 <%= "#{Quest.human_attribute_name(:date_time)}: #{quest.date_time&.strftime("%m-%d %H:%M")}" %>
               <% else %>
                 <%= t('quests.index.datetime_no_result') %>
               <% end %>
             </h2>
-            <p class="leading-relaxed mb-3"><%= t('quests.index.place') %><%= quest.place %></p>
-            <a><%= link_to t('quests.index.view_details'), quest_path(quest), class: 'text-green-500 inline-flex items-center' %></a>
+            <p class="leading-relaxed mb-3 text-sm text-slate-500"><%= t('quests.index.place') %><%= quest.place %></p>
+            <a><%= link_to t('quests.index.view_details'), quest_path(quest), class: 'text-lime-700 inline-flex items-center' %></a>
             <%= render 'edit_button', quest: quest if current_user.own?(quest) %>
         </div>
       </div>
