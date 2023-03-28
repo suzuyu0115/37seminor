@@ -1,26 +1,26 @@
 <%= form_with model: quest, local: true do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
- 
-  <div class="my-5">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+
+  <div class="my-5 ml-5 mr-4">
+    <%= f.label :title, class:"text-slate-100" %>
+    <%= f.text_field :title, class: "block shadow rounded-md mr-4 text-current border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
-  <div class="my-5">
-    <%= f.label :step %>
+  <div class="my-5 ml-5 mr-4">
+    <%= f.label :step, class:"text-slate-100" %>
     <br>
-    <%= f.select :step, Quest.steps.keys.map { |k| [I18n.t("enums.quest.step.#{k}"), k]} %>
+    <%= f.select :step, Quest.steps.keys.map { |k| [I18n.t("enums.quest.step.#{k}"), k]}, class:"text-current" %>
   </div>
-  <div class="my-5">
-    <%= f.label :date_time %>
-    <%= f.datetime_field :date_time, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="my-5 ml-5 mr-4">
+    <%= f.label :date_time, class:"text-slate-100" %>
+    <%= f.datetime_field :date_time, class: "block shadow rounded-md border text-current border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
-  <div class="my-5">
-    <%= f.label :place %>
-    <%= f.text_field :place, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="my-5 ml-5 mr-4">
+    <%= f.label :place, class:"text-slate-100" %>
+    <%= f.text_field :place, class: "block shadow rounded-md border border-gray-200 text-current outline-none px-3 py-2 mt-2 w-full" %>
   </div>
-  <div class="my-5">
-    <%= f.label :body %>
-    <%= f.text_area :body, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", rows: 10 %>
+  <div class="my-5 ml-5 mr-4">
+    <%= f.label :body, class:"text-slate-100" %>
+    <%= f.text_area :body, class: "block shadow rounded-md border text-current border-gray-200 outline-none px-3 py-2 mt-2 w-full", rows: 10 %>
   </div>
-    <%= f.submit t('quests.new.create_quest'), class: "inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg" %>
+    <%= f.submit t('quests.new.create_quest'), class: "ml-5 mb-8 inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg" %>
 <% end %>

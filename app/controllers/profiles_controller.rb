@@ -12,7 +12,9 @@ class ProfilesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    #render layout: "profile_layout"
+  end
 
   private
 
