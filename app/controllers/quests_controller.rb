@@ -24,7 +24,9 @@ class QuestsController < ApplicationController
     @quest = Quest.find(params[:id])
   end
 
-  def edit; end
+  def edit
+    render layout: "quest_layout"
+  end
 
   def update
     if @quest.update(quest_params)
