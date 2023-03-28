@@ -3,6 +3,7 @@ ja:
     login: 'ログイン'
     register: '登録'
     logout: 'ログアウト'
+    signup: 'ハンター登録'
 
     message:
         created: "%{item}を作成しました"
@@ -14,7 +15,7 @@ ja:
       no_result: 'クエストがありません'
       datetime_no_result: '開催時間： 未定'
       place: '開催場所： '
-      view_details: 'クエストの詳細を見る'
+      view_details: '詳細を見る'
     new:
       title: 'クエスト依頼'
       create_quest: 'クエストを依頼'
@@ -25,7 +26,7 @@ ja:
       title: 'クエスト詳細'
       unknown_date_time: '開催日未定'
     edit:
-      title: 'クエスト編集'
+      title: '編集'
   users:
     new:
       title:  'ハンター登録'
