@@ -1,0 +1,5 @@
+<% if current_user.join?(quest) %>
+	<%= render 'unjoin', quest: quest %>
+<% else %>
+	<%= render 'join', quest: quest %>
+<% end %>

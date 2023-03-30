@@ -1,10 +1,10 @@
 class User < ApplicationRecord
   has_many :quests, dependent: :destroy
+  has_many :joins, dependent: :destroy
+  has_many :join_quests, through: :joins, source: :quest
 
   authenticates_with_sorcery!
   mount_uploader :avatar, AvatarUploader #カラム名、アップローダー名
-
-  has_many :quests, dependent: :destroy 
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
@@ -17,5 +17,20 @@ class User < ApplicationRecord
 
   def own?(object)
     id == object.user_id
+  end
+
+  # クエストに参加
+  def join(quest)
+    join_quests << quest
+  end
+
+  # クエスト参加を取り消す
+  def unjoin(quest)
+    join_quests.destroy(quest)
+  end
+
+  # クエスト参加しているか否か判定するメソッド
+  def join?(quest)
+    join_quests.include?(quest)
   end
 end

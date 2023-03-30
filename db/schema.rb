@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_25_041831) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_30_074508) do
+  create_table "joins", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "quest_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["quest_id"], name: "index_joins_on_quest_id"
+    t.index ["user_id", "quest_id"], name: "index_joins_on_user_id_and_quest_id", unique: true
+    t.index ["user_id"], name: "index_joins_on_user_id"
+  end
+
   create_table "quests", charset: "utf8mb4", force: :cascade do |t|
     t.string "title", null: false
     t.datetime "date_time"
@@ -39,5 +49,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_25_041831) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token"
   end
 
+  add_foreign_key "joins", "quests"
+  add_foreign_key "joins", "users"
   add_foreign_key "quests", "users"
 end

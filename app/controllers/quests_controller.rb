@@ -22,6 +22,7 @@ class QuestsController < ApplicationController
 
   def show
     @quest = Quest.find(params[:id])
+    @joins = Join.where(quest_id: @quest.id)
   end
 
   def edit
@@ -34,6 +35,11 @@ class QuestsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  # 参加したクエスト一覧を表示するアクション
+  def joins
+    @join_quests = current_user.join_quests.includes(:user).order(created_at: :desc)
   end
 
   private

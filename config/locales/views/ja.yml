@@ -25,8 +25,13 @@ ja:
     show:
       title: 'クエスト詳細'
       unknown_date_time: '開催日未定'
+      joins: 'クエスト参加者'
+      no_joins: '現在参加希望中のハンターはいません'
+      hunter_name: 'ハンター名'
     edit:
       title: '編集'
+    joins:
+      title: '参加クエスト'
   users:
     new:
       title:  'ハンター登録'

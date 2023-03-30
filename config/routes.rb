@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   delete 'logout' => 'user_sessions#destroy', :as => :logout
 
   resources :users
-  resources :quests, only: %i[index new create show edit update]
+  resources :quests, only: %i[index new create show edit update] do
+    collection do
+      get 'joins'
+    end
+  end
   resources :password_resets, only: %i[new create edit update]
   resource :profile, only: %i[show edit update]
+  resources :joins, only: %i[create destroy]
 end
