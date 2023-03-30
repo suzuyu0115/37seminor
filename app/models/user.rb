@@ -20,4 +20,19 @@ class User < ApplicationRecord
   def own?(object)
     id == object.user_id
   end
+
+  # クエストに参加
+  def join(quest)
+    join_quests << quest
+  end
+
+  # クエスト参加を取り消す
+  def unjoin(quest)
+    join_quests.destroy(quest)
+  end
+
+  # クエスト参加しているか否か判定するメソッド
+  def join?(join)
+    join_quests.include?(quest)
+  end
 end
