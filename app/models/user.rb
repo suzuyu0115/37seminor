@@ -6,8 +6,6 @@ class User < ApplicationRecord
   authenticates_with_sorcery!
   mount_uploader :avatar, AvatarUploader #カラム名、アップローダー名
 
-  has_many :quests, dependent: :destroy 
-
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
@@ -32,7 +30,7 @@ class User < ApplicationRecord
   end
 
   # クエスト参加しているか否か判定するメソッド
-  def join?(join)
+  def join?(quest)
     join_quests.include?(quest)
   end
 end

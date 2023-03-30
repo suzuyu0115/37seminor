@@ -36,6 +36,11 @@ class QuestsController < ApplicationController
     end
   end
 
+  # 参加したクエスト一覧を表示するアクション
+  def joins
+    @join_quests = current_user.join_quests.includes(:user).order(created_at: :desc)
+  end
+
   private
 
   def set_quest
