@@ -1,0 +1,11 @@
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-wrap -m-4">
+			<% if @join_quests.present? %>
+				<%= render @join_quests %>
+			<% else %>
+				<p><%= t('.no_result') %></p>
+			<% end %>
+    </div>
+  </div>
+</section>
