@@ -6,7 +6,11 @@
     <br>
     <h1 class="flex justify-center font-bold text-4xl"><%= @quest.title %></h1>
   </div>
-  <%= render 'edit_button', quest: @quest if current_user.own?(@quest) %>
+  <% if current_user.own?(@quest) %>
+    <%= render 'edit_button', quest: @quest %>
+  <% else %>
+    <%= render 'join_button', quest: @quest %>
+  <% end %>
   <br>
   <div class="my-5">
     <h3><%= Quest.human_attribute_name(:date_time) %></h3>
