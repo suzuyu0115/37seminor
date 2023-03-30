@@ -22,6 +22,7 @@ class QuestsController < ApplicationController
 
   def show
     @quest = Quest.find(params[:id])
+    @joins = Join.where(quest_id: @quest.id)
   end
 
   def edit

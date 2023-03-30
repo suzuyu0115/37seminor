@@ -30,5 +30,20 @@
     <h3><%= Quest.human_attribute_name(:body) %></h3>
     <p class="block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"><%= @quest.body %></p>
   </div>
+
+  <br>
+  <h1 class="flex justify-center font-bold text-4xl">クエスト参加者</h1>
+  <% if @joins.present? %>
+    <% @joins.each do |join| %>
+      <div class="p-4 drop-shadow-2xl">
+        <div class="h-full bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative" style="background-image: url('<%= asset_path('quest.png') %>'); background-repeat: no-repeat; background-position: center; background-size: contain;">
+          <h1 class="title-font sm:text-2xl text-base font-medium text-current mt-4 mb-3 drop-shadow-lg">ハンター名</h1>
+          <h3 class="title-font sm:text-2xl text-base font-medium text-current mt-4 mb-3 drop-shadow-lg"><%= join.user.name %></h3>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <p>現在参加希望中のハンターはいません</p>
+  <% end %>
 </div>
 
