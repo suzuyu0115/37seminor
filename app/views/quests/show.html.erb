@@ -32,7 +32,7 @@
   </div>
 
   <br>
-  <h1 class="flex justify-center font-bold text-4xl">クエスト参加者</h1>
+  <h1 class="flex justify-center font-bold text-4xl"><%= t('.joins') %></h1>
   <section class="text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto">
       <div class="flex flex-wrap -m-4">
@@ -40,13 +40,13 @@
           <% @joins.each do |join| %>
             <div class="p-4 drop-shadow-2xl">
               <div class="h-full bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative" style="background-image: url('<%= asset_path('quest.png') %>'); background-repeat: no-repeat; background-position: center; background-size: contain;">
-                <h1 class="title-font sm:text-2xl text-base font-medium text-current mt-4 mb-3 drop-shadow-lg">ハンター名</h1>
+                <h1 class="title-font sm:text-2xl text-base font-medium text-current mt-4 mb-3 drop-shadow-lg"><%= t('.hunter_name') %></h1>
                 <h3 class="title-font sm:text-2xl text-base font-medium text-current mt-4 mb-3 drop-shadow-lg"><%= join.user.name %></h3>
               </div>
             </div>
           <% end %>
         <% else %>
-          <p>現在参加希望中のハンターはいません</p>
+          <p><%= t('.no_joins') %></p>
         <% end %>
       </div>
     </div>
