@@ -1,5 +1,5 @@
 class Quest < ApplicationRecord
-  belongs_to :user, dependent: :destroy
+  belongs_to :user
   has_many :joins, dependent: :destroy
 
   validates :title, presence: true, length: { maximum: 255 }
