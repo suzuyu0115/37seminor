@@ -42,6 +42,13 @@ class QuestsController < ApplicationController
     @join_quests = current_user.join_quests.includes(:user).order(created_at: :desc)
   end
 
+  # クエストの未討伐/討伐完了を切り替えるアクション
+  def toggle_state
+    @quest = Quest.find(params[:id])
+    @quest.completed! if @quest.not_completed?
+    redirect_to quests_path
+  end
+
   private
 
   def set_quest
