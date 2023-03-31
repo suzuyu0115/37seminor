@@ -8,4 +8,5 @@ class Quest < ApplicationRecord
   validates :place, presence: true, length: { maximum: 255 }
 
   enum step: { introduction: 0, basic: 1, advanced: 2, other: 3 }
+  enum state: { not_completed: 0, completed: 1 }
 end
