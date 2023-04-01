@@ -51,5 +51,9 @@
       </div>
     </div>
   </section>
+
+  <% if current_user.own?(@quest) && @quest.state == 'not_completed' %>
+    <%= button_to 'クエストを完了する', toggle_state_quest_path(@quest), method: :patch, class: "inline-flex text-white bg-lime-600 border-0 py-2 px-6 focus:outline-none hover:bg-lime-500 rounded text-lg", data: { turbo_method: "get", turbo_confirm: 'クエストを完了しますか？' } %>
+  <% end %>
 </div>
 
