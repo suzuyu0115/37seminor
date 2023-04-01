@@ -1,5 +1,6 @@
 class QuestsController < ApplicationController
   before_action :set_quest, only: %i[edit update]
+  before_action :check_editable, only: %i[edit update]
 
   def index
     @quests = Quest.all.includes(:user).order(created_at: :desc)
@@ -53,6 +54,10 @@ class QuestsController < ApplicationController
 
   def set_quest
     @quest = current_user.quests.find(params[:id])
+  end
+
+  def check_editable
+    redirect_to @quest unless @quest.editable?
   end
 
   def quest_params

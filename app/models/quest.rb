@@ -9,4 +9,9 @@ class Quest < ApplicationRecord
 
   enum step: { introduction: 0, basic: 1, advanced: 2, other: 3 }
   enum state: { not_completed: 0, completed: 1 }
+
+  # クエストが"completed"のstateを持つ場合にはfalseを返し、それ以外の場合にはtrueを返すメソッド
+  def editable?
+    !completed?
+  end
 end

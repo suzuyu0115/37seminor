@@ -6,10 +6,10 @@
     <br>
     <h1 class="flex justify-center font-bold text-4xl"><%= @quest.title %></h1>
   </div>
-  <% if current_user.own?(@quest) %>
+  <% if current_user.own?(@quest) && @quest.state == 'not_completed' %>
     <%= render 'edit_button', quest: @quest %>
   <% else %>
-    <%= render 'join_button', quest: @quest %>
+    <%= render 'join_button', quest: @quest if @quest.state == 'not_completed' %>
   <% end %>
   <br>
   <div class="my-5">
