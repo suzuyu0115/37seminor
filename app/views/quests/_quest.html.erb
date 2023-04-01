@@ -1,5 +1,7 @@
       <div class="p-4 drop-shadow-2xl">
-        <%= image_tag 'quest_clear.png', class: "quest_clear_image", alt: "hero" %>
+        <% if quest.state == 'completed' %>
+          <%= image_tag 'quest_clear.png', class: "quest_clear_image", alt: "hero" %>
+        <% end %>
         <div class="h-full bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative" style="background-image: url('<%= asset_path('quest.png') %>'); background-repeat: no-repeat; background-position: center; background-size: contain;">
             <h1 class="title-font sm:text-2xl text-base font-medium text-current mt-4 mb-3 drop-shadow-lg"><%= quest.title %></h1>
             <h2 class="tracking-widest text-sm title-font font-medium text-slate-500 mb-1">
