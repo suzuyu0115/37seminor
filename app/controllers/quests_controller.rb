@@ -47,7 +47,7 @@ class QuestsController < ApplicationController
   def toggle_state
     @quest = Quest.find(params[:id])
     @quest.completed! if @quest.not_completed?
-    redirect_to quests_path
+    redirect_to @quest
   end
 
   private

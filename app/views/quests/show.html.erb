@@ -1,4 +1,7 @@
 <div class="mx-auto md:w-2/3 w-full mb-8">
+        <% if @quest.state == 'completed' %>
+          <%= image_tag 'quest_clear.png', class: "quest_clear_image_show", alt: "hero" %>
+        <% end %>
   <h1 class="font-bold text-4xl"><%= t('.title') %></h1>
   <br>
   <div class="my-5">
