@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     collection do
       get 'joins'
     end
+    member do
+      patch 'toggle_state'
+    end
   end
   resources :password_resets, only: %i[new create edit update]
   resource :profile, only: %i[show edit update]

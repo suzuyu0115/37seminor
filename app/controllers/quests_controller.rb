@@ -1,5 +1,6 @@
 class QuestsController < ApplicationController
   before_action :set_quest, only: %i[edit update]
+  before_action :check_editable, only: %i[edit update]
 
   def index
     @quests = Quest.all.includes(:user).order(created_at: :desc)
@@ -42,10 +43,21 @@ class QuestsController < ApplicationController
     @join_quests = current_user.join_quests.includes(:user).order(created_at: :desc)
   end
 
+  # クエストの未討伐/討伐完了を切り替えるアクション
+  def toggle_state
+    @quest = Quest.find(params[:id])
+    @quest.completed! if @quest.not_completed?
+    redirect_to @quest
+  end
+
   private
 
   def set_quest
     @quest = current_user.quests.find(params[:id])
+  end
+
+  def check_editable
+    redirect_to @quest unless @quest.editable?
   end
 
   def quest_params
