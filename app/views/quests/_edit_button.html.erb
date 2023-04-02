@@ -1,1 +1,1 @@
-<%= link_to t('quests.edit.title'), edit_quest_path(quest), class: "inline-flex text-white bg-lime-600 border-0 py-2 px-6 focus:outline-none hover:bg-lime-500 rounded text-lg" if current_user.own?(quest) %>
+<%= link_to t('quests.edit.title'), edit_quest_path(quest), class: "inline-flex text-white bg-lime-600 border-0 py-2 px-6 focus:outline-none hover:bg-lime-500 rounded" if current_user.own?(quest) %>
