@@ -1,5 +1,5 @@
 # FROM：使用するイメージ、バージョン
-FROM ruby:3.1
+FROM ruby:3.1.4
 # 公式→https://hub.docker.com/_/ruby
 
 # Rails 7ではWebpackerが標準では組み込まれなくなったので、yarnやnodejsのインストールが不要
