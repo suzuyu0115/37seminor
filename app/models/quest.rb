@@ -2,7 +2,7 @@ class Quest < ApplicationRecord
   belongs_to :user
   has_many :joins, dependent: :destroy
 
-  validates :title, presence: true, length: { maximum: 255 }
+  validates :title, presence: true, length: { maximum: 8 }
   validates :step, presence: true
   validates :body, presence: true, length: { maximum: 65535 }
   validates :place, presence: true, length: { maximum: 255 }
