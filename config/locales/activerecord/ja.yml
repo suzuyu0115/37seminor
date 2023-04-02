@@ -23,3 +23,6 @@ ja:
         basic: '基礎STEP'
         advanced: '応用STEP'
         other: 'その他'
+      state:
+        not_completed: '未完了'
+        completed: '完了済み'
