@@ -1,8 +1,6 @@
 <header class="text-gray-100 body-font bg-neutral-900">
   <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-    <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0">
-      <span class="ml-3 text-xl">hunter</span>
-    </a>
+    <%= link_to "Code Hunter", quests_path, class: 'mr-5' %>
     <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
       <%= link_to t('quests.index.title'), quests_path, class: 'mr-5 hover:text-gray-400' %>
       <%= link_to t('quests.new.title'), new_quest_path, class: 'mr-5 hover:text-gray-400' %>
