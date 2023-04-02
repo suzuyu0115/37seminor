@@ -1,4 +1,4 @@
-<div class="mx-auto md:w-2/3 w-full mb-8">
+<div class="mx-auto md:w-2/3 w-full mb-8 bg-black bg-opacity-30 pt-10 pb-10 pl-5 pr-5 text-gray-100">
         <% if @quest.state == 'completed' %>
           <%= image_tag 'quest_clear.png', class: "quest_clear_image_show", alt: "hero" %>
         <% end %>
@@ -38,7 +38,7 @@
   <h1 class="flex justify-center font-bold text-4xl"><%= t('.joins') %></h1>
   <section class="text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto">
-      <div class="flex flex-wrap -m-4">
+      <div class="flex flex-wrap -m-4 text-gray-100">
         <% if @joins.present? %>
           <% @joins.each do |join| %>
             <div class="p-4 drop-shadow-2xl">
