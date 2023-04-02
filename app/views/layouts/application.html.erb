@@ -11,14 +11,14 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="min-h-screen">
     <% if logged_in? %>
       <%= render 'shared/header' %>
     <% else %>
       <%= render 'shared/before_login_header' %>
     <% end %>
     <%= render 'shared/flash_message' %>
-    <main class="flex w-full bg-opacity-75" style="background-image: url('<%= asset_path('bgimg6.jpeg') %>'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+    <main class="bg-center bg-cover" style="background-image: url('<%= asset_path('bgimg6.jpeg') %>');">
         <%= yield %>
     </main>
     <%= render 'shared/footer' %>

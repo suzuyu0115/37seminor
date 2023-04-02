@@ -1,13 +1,13 @@
 <%= form_with url: login_path, local: true do |f| %>
   <div class="my-5">
-    <%= f.label :email, User.human_attribute_name(:email) %>
+    <%= f.label :email, User.human_attribute_name(:email), class:"text-gray-100" %>
     <%= f.email_field :email, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
-  <div class="my-5">
-    <%= f.label :password, User.human_attribute_name(:password) %>
+  <div class="my-5 pb-5">
+    <%= f.label :password, User.human_attribute_name(:password), class:"text-gray-100" %>
     <%= f.password_field :password, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
-  <div class="inline">
+  <div class="inline pb-10">
     <%= f.submit (t 'defaults.login'), class: "inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg" %>
   </div>
 <% end %>
