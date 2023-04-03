@@ -7,7 +7,7 @@
             <p class="leading-relaxed mb-3 text-sm text-slate-500 truncate"><%= t('defaults.requester') %> : <%= quest.user.name %></p>
             <h2 class="tracking-widest text-sm title-font font-medium text-slate-500 mb-1">
               <% if quest.date_time.present? %>
-                <%= "#{Quest.human_attribute_name(:date_time)}: #{quest.date_time&.strftime("%m/%d %H:%M")}" %>
+                <%= t('quests.index.datetime') %> <%= "#{quest.date_time&.strftime("%m/%d %H:%M")}" %>
               <% else %>
                 <%= t('quests.index.datetime_no_result') %>
               <% end %>

@@ -29,7 +29,9 @@
   </div>
   <div class="my-5">
     <h3><%= Quest.human_attribute_name(:body) %></h3>
-    <p class="block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"><%= @quest.body %></p>
+    <div class = "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full">
+    <%= simple_format(@quest.body) %>
+    </div>
   </div>
 
   <br>

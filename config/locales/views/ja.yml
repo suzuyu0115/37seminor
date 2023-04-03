@@ -14,8 +14,9 @@ ja:
     index:
       title: 'クエスト一覧'
       no_result: 'クエストがありません'
-      datetime_no_result: '開催時間： 未定'
-      place: '開催場所： '
+      datetime: '時間: '
+      datetime_no_result: '時間： 未定'
+      place: '場所： '
       view_details: '詳細'
     new:
       title: 'クエスト依頼'
