@@ -18,7 +18,7 @@
       <%= render 'shared/before_login_header' %>
     <% end %>
     <%= render 'shared/flash_message' %>
-    <main class="bg-center bg-auto h-screen p-8" style="background-image: url('<%= asset_path('bgimg6.jpeg') %>');">
+    <main class="bg-cover min-h-screen p-8" style="background-image: url('<%= asset_path('bgimg6.jpeg') %>');">
       <%= yield %>
     </main>
     <%= render 'shared/footer' %>
