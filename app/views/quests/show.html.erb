@@ -1,10 +1,10 @@
-<div class="mx-auto md:w-2/3 w-full mb-8 bg-white p-5 mt-8">
+<div class="mx-auto md:w-2/3 w-full mb-8 bg-white p-5 mt-8 bg-opacity-75">
         <% if @quest.state == 'completed' %>
           <%= image_tag 'quest_clear.png', class: "quest_clear_image_show", alt: "hero" %>
         <% end %>
   <br>
   <div class="my-5">
-    <h1 class="flex justify-center font-bold text-4xl">「<%= @quest.title %>」の討伐</h1>
+    <h1 class="flex justify-center font-bold text-4xl text-stone-700">「<%= @quest.title %>」の討伐</h1>
   </div>
   <% if current_user.own?(@quest) && @quest.state == 'not_completed' %>
     <%= render 'edit_button', quest: @quest %>
@@ -32,7 +32,7 @@
   </div>
 
   <br>
-  <h1 class="flex justify-center font-bold text-4xl"><%= t('.joins') %></h1>
+  <h1 class="flex justify-center font-bold text-4xl text-stone-700"><%= t('.joins') %></h1>
   <section class="text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto">
       <div class="flex flex-wrap -m-4">
