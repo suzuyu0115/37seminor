@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_many :quests, dependent: :destroy
   has_many :joins, dependent: :destroy
   has_many :join_quests, through: :joins, source: :quest
+  has_many :authentications, dependent: :destroy
+  accepts_nested_attributes_for :authentications
 
   authenticates_with_sorcery!
   mount_uploader :avatar, AvatarUploader #カラム名、アップローダー名
