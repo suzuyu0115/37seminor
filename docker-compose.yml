@@ -22,7 +22,7 @@ services:
     # m1はplatformを指定して、linux/amd64にエミュレートする指定をすることで正常に動くようになります
     platform: linux/amd64
     # DBのレコードが日本語だと文字化けするので、utf8をセットする
-    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci --innodb_use_native_aio=0
     volumes:
       - db-volume:/var/lib/mysql
     # 環境変数
