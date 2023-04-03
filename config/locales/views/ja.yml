@@ -4,6 +4,7 @@ ja:
     register: '登録'
     logout: 'ログアウト'
     signup: '新規登録'
+    requester: '依頼者'
 
     message:
         created: "%{item}を作成しました"

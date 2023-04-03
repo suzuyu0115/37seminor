@@ -4,10 +4,10 @@
         <% end %>
         <div class="h-full bg-opacity-75 px-10 pt-16 pb-16 rounded-lg overflow-hidden text-center relative" style="background-image: url('<%= asset_path('quest.png') %>'); background-repeat: no-repeat; background-position: center; background-size: contain;">
             <p class="sm:text-base text-current pt-2 leading-loose drop-shadow-lg truncate break-all whitespace-normal"><%= quest.title %></p>
-            <p class="sm:text-sm text-current drop-shadow-lg truncate break-all whitespace-normal"><%= quest.user.name %></p>
+            <p class="leading-relaxed mb-3 text-sm text-slate-500 truncate"><%= t('defaults.requester') %> : <%= quest.user.name %></p>
             <h2 class="tracking-widest text-sm title-font font-medium text-slate-500 mb-1">
               <% if quest.date_time.present? %>
-                <%= "#{Quest.human_attribute_name(:date_time)}: #{quest.date_time&.strftime("%m-%d %H:%M")}" %>
+                <%= "#{Quest.human_attribute_name(:date_time)}: #{quest.date_time&.strftime("%m/%d %H:%M")}" %>
               <% else %>
                 <%= t('quests.index.datetime_no_result') %>
               <% end %>
