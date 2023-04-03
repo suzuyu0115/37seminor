@@ -33,6 +33,7 @@ ja:
       title: '編集'
     joins:
       title: '参加クエスト'
+      no_result: '参加中のクエストはありません'
   users:
     new:
       title:  'ハンター登録'
