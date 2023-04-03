@@ -3,7 +3,7 @@ ja:
     login: 'ログイン'
     register: '登録'
     logout: 'ログアウト'
-    signup: 'ハンター登録'
+    signup: '新規登録'
 
     message:
         created: "%{item}を作成しました"
@@ -33,6 +33,7 @@ ja:
       title: '編集'
     joins:
       title: '参加クエスト'
+      no_result: '参加中のクエストはありません'
   users:
     new:
       title:  'ハンター登録'
