@@ -3,7 +3,7 @@ ja:
     login: 'ログイン'
     register: '登録'
     logout: 'ログアウト'
-    signup: 'ハンター登録'
+    signup: '新規登録'
 
     message:
         created: "%{item}を作成しました"
