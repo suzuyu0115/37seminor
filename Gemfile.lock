@@ -103,6 +103,7 @@ GEM
       reline (>= 0.3.1)
     deep_merge (1.2.2)
     diff-lcs (1.5.0)
+    dotenv (2.8.1)
     dry-configurable (1.0.1)
       dry-core (~> 1.0, < 2)
       zeitwerk (~> 2.6)
@@ -340,6 +341,7 @@ DEPENDENCIES
   carrierwave
   config
   debug
+  dotenv
   enum_help
   factory_bot_rails
   faker (~> 3.1.1)
@@ -363,7 +365,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.1.3p185
+   ruby 3.1.4p223
 
 BUNDLED WITH
    2.3.20
