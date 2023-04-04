@@ -83,3 +83,4 @@ end
 gem 'sorcery'
 gem 'config'
 gem "dotenv"
+gem 'omniauth-github'
