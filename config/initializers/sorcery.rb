@@ -138,7 +138,8 @@ Rails.application.config.sorcery.configure do |config|
   #
   config.github.key = ENV['GITHUB_KEY']
   config.github.secret = ENV['GITHUB_SECRET']
-  config.github.callback_url = "https://codehunter.magia.runteq.jp/oauth/callback?provider=github"
+  #config.github.callback_url = "https://codehunter.magia.runteq.jp/oauth/callback?provider=github"
+  config.github.callback_url = "http://localhost:3001/oauth/callback?provider=github"
   config.github.user_info_mapping = {email: "email", name: "login", remote_avatar_url: "avatar_url"}
   config.github.scope = "user:email"
   #

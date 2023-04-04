@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   post 'login' => "user_sessions#create"
   delete 'logout' => 'user_sessions#destroy', :as => :logout
   post "oauth/callback", to: "oauths#callback"
-  get "oauth/callback", to: "oauths#callback"
-  get "oauth/:provider", to: "oauths#oauth", as: :auth_at_provider
+  get "/auth/:provider/callback" => "oauths#callback"
+  get "/auth/:provider" => "oauths#oauth", :as => :auth_at_provider
+  # get "oauth/callback", to: "oauths#callback"
+  # get "oauth/:provider", to: "oauths#oauth", as: :auth_at_provider
 
   resources :users
   resources :quests, only: %i[index new create show edit update] do
