@@ -11,18 +11,18 @@ class OauthsController < ApplicationController
       redirect_to quests_path, notice: "#{provider.titleize}でログインしました"
     else
       begin
+        @user = create_from(provider)
         # 特定の組織にユーザーが所属しているかどうかを確認する
-        organizations = request.env['omniauth.auth']['extra']['raw_info']['organizations']
-        if organizations && organizations.map { |org| org['login'] }.include?('RUNTEQ')
-          @user = create_from(provider)
+        organizations = request.env['omniauth.auth']['extra']['raw_info']['organizations'].map { |org| org['login'] }
+        if organizations.include?('RUNTEQ')
           reset_session
           auto_login(@user)
-          redirect_to quests_path, success: "#{provider.titleize}でログインしました"
+          redirect_to quests_path, notice: "#{provider.titleize}でログインしました"
         else
           redirect_to root_path, alert: 'RUNTEQに所属していないためログインできません'
         end
-      rescue StandardError => e
-        redirect_to root_path, alert: e.message
+      rescue StandardError
+        redirect_to root_path, alert: "#{provider.titleize}でのログインに失敗しました"
       end
     end
   end
@@ -33,18 +33,18 @@ class OauthsController < ApplicationController
     params.permit(:code, :provider, :error)
   end
 
-  def create_from(provider)
-    case provider
-    when 'github'
-      user_info = request.env['omniauth.auth']['info']
-      organizations = request.env['omniauth.auth']['extra']['raw_info']['organizations']
-      if organizations && organizations.map { |org| org['login'] }.include?('RUNTEQ')
-        User.create(name: user_info['name'], email: user_info['email'], password: SecureRandom.hex)
-      else
-        raise "You don't belong to RUNTEQ"
-      end
-    else
-      raise NotImplementedError, "Provider #{provider} not implemented."
-    end
-  end
+  # def create_from(provider)
+  #   case provider
+  #   when 'github'
+  #     user_info = request.env['omniauth.auth']['info']
+  #     organizations = request.env['omniauth.auth']['extra']['raw_info']['organizations']
+  #     if organizations && organizations.map { |org| org['login'] }.include?('RUNTEQ')
+  #       User.create(name: user_info['name'], email: user_info['email'], password: SecureRandom.hex)
+  #     else
+  #       raise "You don't belong to RUNTEQ"
+  #     end
+  #   else
+  #     raise NotImplementedError, "Provider #{provider} not implemented."
+  #   end
+  # end
 end
