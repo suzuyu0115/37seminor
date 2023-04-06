@@ -37,6 +37,7 @@ ja:
       hunter_name: 'ハンター名'
       completed?: 'クエストを完了しますか？'
       hunt: 'の討伐'
+      complete: 'クエストを完了する'
     edit:
       title: '編集'
     joins:
