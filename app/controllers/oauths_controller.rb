@@ -1,4 +1,3 @@
-require 'octokit'
 class OauthsController < ApplicationController
   skip_before_action :require_login, raise: false
 
@@ -7,7 +6,6 @@ class OauthsController < ApplicationController
   end
 
   def callback
-    client = Octokit::Client.new(access_token: ENV['GITHUB_SECRET'], scopes: 'user:email, read:org')
     provider = params[:provider]
     if @user = login_from(provider)
       redirect_to quests_path, notice: "#{provider.titleize}でログインしました"
