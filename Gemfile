@@ -84,3 +84,5 @@ gem 'sorcery'
 gem 'config'
 gem "dotenv"
 gem 'omniauth-github'
+gem 'omniauth'
+gem "omniauth-rails_csrf_protection"
