@@ -1,5 +1,6 @@
 class OauthsController < ApplicationController
-  skip_before_action :require_login, raise: false
+  #before_action :secret_word, only: %i[login]
+  skip_before_action :require_login, only: %i[oauth callback login]
 
   def oauth
     login_at(params[:provider])
@@ -19,5 +20,23 @@ class OauthsController < ApplicationController
         redirect_to root_path, :alert => "Failed to login from #{provider.titleize}!"
       end
     end
+  end
+
+  def secret_word
+    puts "secret_word method called"
+    if valid_password?
+      redirect_to login_path
+    end
+  end
+
+  def login; end
+
+  def destroy
+    logout
+    redirect_to root_path, success: t('.success')
+  end
+
+  def valid_password?
+    params[:secret_word] == ENV['SECRET_WORD']
   end
 end
