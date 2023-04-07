@@ -9,21 +9,20 @@ class OauthsController < ApplicationController
   def callback
     provider = params[:provider]
     if @user = login_from(provider)
-      redirect_to quests_path, notice: "#{provider.titleize}でログインしました"
+      redirect_to quests_path, success: t('.success')
     else
       begin
           @user = create_from(provider)
           reset_session
           auto_login(@user)
-          redirect_to quests_path, notice: "#{provider.titleize}でログインしました"
+          redirect_to quests_path, notice: t('.success')
       rescue
-        redirect_to root_path, :alert => "Failed to login from #{provider.titleize}!"
+        redirect_to root_path, danger: t('.fail')
       end
     end
   end
 
   def secret_word
-    puts "secret_word method called"
     if valid_password?
       redirect_to login_path
     end
