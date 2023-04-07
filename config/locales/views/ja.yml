@@ -52,6 +52,14 @@ ja:
     create:
       success: 'ユーザー登録が完了しました'
       fail: 'ユーザー登録に失敗しました'
+  oauths:
+    callback:
+      success: "ログインしました"
+      fail: 'ログインに失敗しました'
+    login:
+      title: 'ログイン'
+    destroy:
+      success: 'ログアウトしました'
   user_sessions:
     new:
       title:  'ログイン'

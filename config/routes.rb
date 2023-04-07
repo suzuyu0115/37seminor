@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   root 'static_pages#top'
-  get 'login' => 'user_sessions#new', :as => :login
-  post 'login' => "user_sessions#create"
-  delete 'logout' => 'user_sessions#destroy', :as => :logout
+  post 'oauth/callback', to: 'oauths#callback'
+  get 'oauth/callback', to: 'oauths#callback'
+  get 'oauth/:provider', to: 'oauths#oauth', as: :auth_at_provider
+  get 'oauths/secret_word', to: 'oauths#secret_word'
+  post 'oauths/secret_word', to: 'oauths#secret_word'
+  get 'login', to: 'oauths#login', :as => :login
+  delete 'logout' => 'oauths#destroy', :as => :logout
 
   resources :users
   resources :quests, only: %i[index new create show edit update] do
