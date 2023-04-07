@@ -45,7 +45,7 @@ ja:
       fail: 'ユーザー登録に失敗しました'
   oauths:
     callback:
-      succece:  '#{provider.titleize}でログインしました'
+      success: "ログインしました"
       fail: 'ログインに失敗しました'
     login:
       title: 'ログイン'

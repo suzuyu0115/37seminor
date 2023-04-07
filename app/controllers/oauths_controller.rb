@@ -15,7 +15,7 @@ class OauthsController < ApplicationController
           @user = create_from(provider)
           reset_session
           auto_login(@user)
-          redirect_to quests_path, notice: t('.success')
+          redirect_to quests_path, success: t('.success')
       rescue
         redirect_to root_path, danger: t('.fail')
       end
