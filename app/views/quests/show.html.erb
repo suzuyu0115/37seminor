@@ -5,7 +5,7 @@
         <% end %>
   <br>
   <div class="my-5">
-    <h1 class="flex justify-center font-bold text-4xl text-stone-700">「<%= @quest.title %>」の討伐</h1>
+    <h1 class="flex justify-center font-bold text-4xl text-stone-700">「<%= @quest.title %>」<%= t('.hunt') %></h1>
   </div>
   <h3 class="sm:text-2xl text-base font-medium text-current mt-4 mb-3 drop-shadow-lg"><%= t('defaults.requester') %> : <%= @quest.user.name %></h3>
   <% if current_user.own?(@quest) && @quest.state == 'not_completed' %>
@@ -57,7 +57,7 @@
   </section>
 
   <% if current_user.own?(@quest) && @quest.state == 'not_completed' %>
-    <%= button_to 'クエストを完了する', toggle_state_quest_path(@quest), method: :patch, class: "inline-flex text-white bg-lime-600 border-0 py-2 px-6 focus:outline-none hover:bg-lime-500 rounded text-lg", data: { turbo_method: "get", turbo_confirm: t('.completed?') } %>
+    <%= button_to t('.complete'), toggle_state_quest_path(@quest), method: :patch, class: "inline-flex text-white bg-lime-600 border-0 py-2 px-6 focus:outline-none hover:bg-lime-500 rounded text-lg", data: { turbo_method: "get", turbo_confirm: t('.completed?') } %>
   <% end %>
 </div>
 </div>

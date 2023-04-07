@@ -1,8 +1,8 @@
 <% content_for(:title, t('.title')) %>
 <body class="antialiased">
   <div class="max-w-lg mx-auto bg-white bg-opacity-75 p-8 rounded-xl shadow shadow-slate-300">
-    <h1 class="font-bold text-4xl text-stone-600"><%= t '.title' %></h1>
+    <h1 class="font-bold text-4xl text-stone-600"><%= t('.title') %></h1>
     <%= render "form", user: @user %>
-    <%= link_to (t '.to_login_page'), login_path, class: "ml-4 inline-flex bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg text-stone-600" %>
+    <%= link_to t('.to_login_page'), login_path, class: "ml-4 inline-flex bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg text-stone-600" %>
   </div>
 </body>

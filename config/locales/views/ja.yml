@@ -5,11 +5,16 @@ ja:
     logout: 'ログアウト'
     signup: '新規登録'
     requester: '依頼者'
+    title_validation: '31文字以内'
 
     message:
         created: "%{item}を作成しました"
         not_created: "%{item}を作成できませんでした"
         require_login: "ログインしてください"
+  static_pages:
+    top:
+      title: 'CODE HUNTER'
+      subtitle: '- ともに困難を乗り越えよう -'
   quests:
     index:
       title: 'クエスト一覧'
@@ -31,11 +36,15 @@ ja:
       no_joins: '現在参加希望中のハンターはいません'
       hunter_name: 'ハンター名'
       completed?: 'クエストを完了しますか？'
+      hunt: 'の討伐'
+      complete: 'クエストを完了する'
     edit:
       title: '編集'
     joins:
       title: '参加クエスト'
       no_result: '参加中のクエストはありません'
+      join: '参加'
+      unjoin: '不参加'
   users:
     new:
       title:  'ハンター登録'
@@ -57,6 +66,7 @@ ja:
     new:
       title: 'パスワードリセット申請'
       submit: '送信'
+      reset_password: 'Reset password'
     edit:
       title: 'パスワードリセット'
     create:
