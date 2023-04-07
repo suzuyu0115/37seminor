@@ -4,7 +4,7 @@
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging,
 # :magic_login, :external
-Rails.application.config.sorcery.submodules = [:reset_password, :external]
+Rails.application.config.sorcery.submodules = [:reset_password]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
@@ -80,7 +80,7 @@ Rails.application.config.sorcery.configure do |config|
   # i.e. [:twitter, :facebook, :github, :linkedin, :xing, :google, :liveid, :salesforce, :slack, :line].
   # Default: `[]`
   #
-  config.external_providers = [:github]
+  # config.external_providers =
 
   # You can change it by your local ca_file. i.e. '/etc/pki/tls/certs/ca-bundle.crt'
   # Path to ca_file. By default use a internal ca-bundle.crt.
@@ -136,12 +136,11 @@ Rails.application.config.sorcery.configure do |config|
   # config.instagram.user_info_mapping = {:email => "username"}
   # config.instagram.access_permissions = ["basic", "public_content", "follower_list", "comments", "relationships", "likes"]
   #
-  config.github.key = ENV['GITHUB_KEY']
-  config.github.secret = ENV['GITHUB_SECRET']
-  #config.github.callback_url = "https://codehunter.magia.runteq.jp/oauth/callback?provider=github"
-  config.github.callback_url = "http://0.0.0.0:3001/oauth/callback?provider=github"
-  config.github.user_info_mapping = {email: "email", name: "login", remote_avatar_url: "avatar_url"}
-  config.github.scope = "user:email"
+  # config.github.key = ""
+  # config.github.secret = ""
+  # config.github.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=github"
+  # config.github.user_info_mapping = {:email => "name"}
+  # config.github.scope = ""
   #
   # config.paypal.key = ""
   # config.paypal.secret = ""
@@ -227,7 +226,7 @@ Rails.application.config.sorcery.configure do |config|
   # config.line.bot_prompt = "normal"
   # config.line.user_info_mapping = {name: 'displayName'}
 
-
+  
   # For information about Discord API
   # https://discordapp.com/developers/docs/topics/oauth2
   # config.discord.key = "xxxxxx"
@@ -544,7 +543,7 @@ Rails.application.config.sorcery.configure do |config|
     # Class which holds the various external provider data for this user.
     # Default: `nil`
     #
-    user.authentications_class = Authentication
+    # user.authentications_class =
 
     # User's identifier in the `authentications` class.
     # Default: `:user_id`
