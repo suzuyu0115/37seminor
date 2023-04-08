@@ -16,7 +16,7 @@
   <br>
   <div class="my-5">
     <h3><%= Quest.human_attribute_name(:date_time) %></h3>
-    <p class="block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full">
+    <p class="block shadow rounded-md border border-gray-500 outline-none px-3 py-2 mt-2 w-full">
       <% if @quest.date_time.present? %>
         <%= l @quest.date_time %>
       <% else %>
@@ -26,11 +26,11 @@
   </div>
   <div class="my-5">
     <h3><%= Quest.human_attribute_name(:place) %></h3>
-    <p class="block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"><%= @quest.place %></p>
+    <p class="block shadow rounded-md border border-gray-500 outline-none px-3 py-2 mt-2 w-full"><%= @quest.place %></p>
   </div>
   <div class="my-5">
     <h3><%= Quest.human_attribute_name(:body) %></h3>
-    <div class = "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full">
+    <div class = "block shadow rounded-md border border-gray-500 outline-none px-3 py-2 mt-2 w-full">
     <%= simple_format(@quest.body) %>
     </div>
   </div>

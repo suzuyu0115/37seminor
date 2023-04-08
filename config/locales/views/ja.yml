@@ -47,7 +47,7 @@ ja:
       unjoin: '不参加'
   users:
     new:
-      title:  'ハンター登録'
+      title:  '新規登録'
       to_login_page: 'ログインページへ'
     create:
       success: 'ユーザー登録が完了しました'
@@ -55,7 +55,7 @@ ja:
   user_sessions:
     new:
       title:  'ログイン'
-      to_register_page: 'ハンター登録はこちら'
+      to_register_page: '新規登録はこちら'
       password_forget: 'パスワードをお忘れの方はこちら'
     create:
       success: 'ログインしました'
