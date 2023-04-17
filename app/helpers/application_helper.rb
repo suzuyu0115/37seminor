@@ -30,7 +30,6 @@ module ApplicationHelper
       },
       twitter: {
         card: 'summary_large_image',
-        site:,
       }
     }
   end
