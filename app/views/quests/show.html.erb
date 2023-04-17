@@ -10,6 +10,11 @@
   <h3 class="sm:text-2xl text-base font-medium text-current mt-4 mb-3 drop-shadow-lg"><%= t('defaults.requester') %> : <%= @quest.user.name %></h3>
   <% if current_user.own?(@quest) && @quest.state == 'not_completed' %>
     <%= render 'edit_button', quest: @quest %>
+    <button class="bg-blue-400 hover:bg-blue-300 text-white rounded px-5 py-2" style="margin-left: 10px">
+      <%= link_to "https://twitter.com/share?url=#{ request.url }&text=討伐会を募集しました！%0a課題名: 【#{ @quest.title }】%0a&hashtags=CodeHunter", target: '_blank' do %>
+        <i class="fab fa-twitter" style='color: white;'></i>Twitterで募集する
+      <% end %>
+    </button>
   <% else %>
     <%= render 'join_button', quest: @quest if @quest.state == 'not_completed' %>
   <% end %>
