@@ -11,7 +11,7 @@
   <% if current_user.own?(@quest) && @quest.state == 'not_completed' %>
     <%= render 'edit_button', quest: @quest %>
     <button class="bg-blue-400 hover:bg-blue-300 text-white rounded px-5 py-2" style="margin-left: 10px">
-      <%= link_to "https://twitter.com/share?url=#{ request.url }&text=討伐会を募集しました！%0a課題名: 【#{ @quest.title }】%0a&hashtags=CodeHunter", target: '_blank' do %>
+      <%= link_to "https://twitter.com/share?url=#{ request.url }&text=【#{ @quest.title }】討伐のハンターを募集しております%0a&hashtags=CodeHunter", target: '_blank' do %>
         <i class="fab fa-twitter" style='color: white;'></i>Twitterで募集する
       <% end %>
     </button>
