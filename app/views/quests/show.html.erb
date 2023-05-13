@@ -36,7 +36,7 @@
   <div class="my-5">
     <h3><%= Quest.human_attribute_name(:body) %></h3>
     <div class = "block shadow rounded-md border border-gray-500 outline-none px-3 py-2 mt-2 w-full">
-    <%= simple_format(@quest.body) %>
+    <%= text_url_to_link(safe_join((h(@quest.body)).split("\n"),tag(:br))).html_safe %> 
     </div>
   </div>
 

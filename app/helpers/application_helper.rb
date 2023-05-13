@@ -1,4 +1,6 @@
 module ApplicationHelper
+  require "uri"
+
   def page_title(page_title = '')
     base_title = 'Code Hunter'
 
@@ -33,4 +35,16 @@ module ApplicationHelper
       }
     }
   end
+
+    def text_url_to_link text
+
+      URI.extract(text, ['http','https']).uniq.each do |url|
+        sub_text = ""
+        sub_text << "<a href=" << url << " target=\"_blank\", class=text-sky-500>" << url << "</a>"
+
+        text.gsub!(url, sub_text)
+      end
+
+      return text
+    end
 end
